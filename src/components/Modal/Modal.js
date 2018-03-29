@@ -10,20 +10,20 @@ class Modal extends Component{
             <div className="Modal">
                 <div style={{alignSelf:`center`}}>
                     <button
-                        className="Modal_Button Modal_Button__Nav"
+                        className="Modal_Button Modal_Button__Prev"
                         onClick={clickPrev}
                     >{`<`}</button>
                 </div>
 
                     <div className="Modal_Content">
                         <button className="Modal_Button Modal_Button__Close"
-                            onClick={this.props.onClose}
-                        >{`X`}
+                            onClick={this.props.onClose}>
+                            {'Close'}
                         </button>
                             <img src={`${images[showImage].path}`} alt=""/>
                     </div>
                 <div style={{alignSelf:`center`}}>
-                    <button className="Modal_Button Modal_Button__Nav" onClick={clickNext}>{`>`}</button>
+                    <button className="Modal_Button Modal_Button__Next" onClick={clickNext}>{`>`}</button>
                 </div>
             </div>
         );

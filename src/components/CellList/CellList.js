@@ -1,6 +1,3 @@
-/**
- * Created by Sw_DOn on 24.03.2018.
- */
 import React, {Component} from 'react';
 import Cell from '../Cell/Cell';
 import Modal from '../Modal/Modal'
@@ -76,4 +73,3 @@ class CellList extends Component {
 }
 
 export default CellList;
-

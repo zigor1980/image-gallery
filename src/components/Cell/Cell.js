@@ -1,6 +1,3 @@
-/**
- * Created by Sw_DOn on 24.03.2018.
- */
 import React from 'react'
 
 function Cell (data){
