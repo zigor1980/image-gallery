@@ -1,0 +1,81 @@
+.Modal{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 85px 1fr 85px;
+    grid-template-rows: 1fr;
+    align-items: stretch;
+    position: fixed;
+    left: 0;
+    top:0;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 425px) {
+    .Modal{
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+}
+
+.Modal_Content{
+    margin: 20px;
+    position: relative;
+}
+
+.Modal_Content img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media screen and (max-width: 425px) {
+    .Modal_Content{
+        margin: 0;
+    }
+}
+
+.Modal_Button{
+    border: 1px solid #ccc;
+    margin: 20px;
+    font-size: 36px;
+    color: #ccc;
+    background: #ffffff;
+    line-height: 40px;
+    border-radius: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.Modal_Button:hover{
+    color: #222222;
+}
+
+@media screen and (max-width: 425px){
+    .Modal_Button__Nav {
+        margin: 10px auto;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        color: #222222;
+        transform: rotate(90deg);
+    }
+}
+
+.Modal_Button__Close{
+    margin: 0;
+    position: absolute;
+    top:-15px;
+    right: -15px;
+}
+
+@media screen and (max-width: 425px) {
+    .Modal_Button__Close{
+        color: #222222;
+        top: -80px;
+        right: 5px;
+    }
+}
