@@ -1,0 +1,69 @@
+import * as React from 'react';
+import './Infinite.css';
+
+export class Infinite extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onScroll = this.onScroll.bind(this);
+        this.state = {
+            loading: false,
+        };
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', this.onScroll, { passive: true });
+    }
+
+    componentDidUpdate() {
+        this.onScroll();
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.onScroll);
+    }
+
+    onScroll() {
+        if (!this.container || this.state.loading) {
+            return;
+        }
+        const scroll = document.documentElement.scrollTop;
+        const containerHeight = this.container.clientHeight;
+        let visiblePat = window.innerHeight;
+        console.log(scroll);
+        console.log(containerHeight);
+        console.log(visiblePat);
+        console.log(scroll + visiblePat >= containerHeight);
+        if (scroll + visiblePat > containerHeight) {
+            this.nextPage();
+        }
+    }
+
+    async nextPage() {
+        this.setState({ loading: true });
+        try {
+            await this.props.fetchNext();
+        } catch (err) {
+            console.error(err);
+        } finally {
+            this.setState({ loading: false });
+        }
+    }
+
+    render() {
+        return (
+            <div className="Wrapper" ref={(container) => { this.container = container; }}>
+                {this.props.children}
+                {this.state.loading && (
+                    <div className="spinner">
+                        <div className="rect1" />
+                        <div className="rect2" />
+                        <div className="rect3" />
+                        <div className="rect4" />
+                        <div className="rect5" />
+                    </div>
+                )}
+            </div>
+        );
+    }
+}
+

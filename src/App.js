@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import imageList from './images'
-import CellList from './components/CellList/CellList'
+import { connect } from 'react-redux';
+import { CellList } from './components/CellList/CellList'
 import './App.css';
+
+const stateToProps = state => ({
+    route: state.route,
+});
 
 class App extends Component {
   render() {
     return (
-        <CellList imageList = {imageList} />
+        <CellList />
     );
   }
 }
 
-export default App;
+export default connect(stateToProps)(App);

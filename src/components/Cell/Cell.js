@@ -4,7 +4,7 @@ function Cell (data){
     let {props,onImageClick} = data;
     return (
         <img
-            src={`${props.path}`}
+            src={`${props.images.downsized.url}`}
             alt=""
             onClick={onImageClick}
         />
