@@ -5,7 +5,7 @@ import './Modal.css'
 class Modal extends Component{
 
     render (){
-        const {images,showImage,clickPrev, clickNext} = this.props;
+        const {items,showImage,clickPrev, clickNext} = this.props;
         return (
             <div className="Modal">
                 <div style={{alignSelf:`center`}}>
@@ -21,7 +21,7 @@ class Modal extends Component{
                             onClick={this.props.onClose}>
                             {'Close'}
                         </button>
-                            <img src={`${images[showImage].path}`} alt=""/>
+                            <img src={`${items[showImage].images.original.url}`} alt=""/>
                     </div>
                 <div style={{alignSelf:`center`}}>
                     <button className="Modal_Button Modal_Button__Next" onClick={clickNext}>{``}</button>

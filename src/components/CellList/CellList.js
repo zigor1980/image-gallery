@@ -18,6 +18,7 @@ export const CellList = connect(stateToProps)(
         constructor (props){
             super(props);
             this.state = {
+                layout: null,
                 showImage:null,
                 showModal:false,
                 loading:true,
@@ -26,6 +27,17 @@ export const CellList = connect(stateToProps)(
         }
 
         componentDidMount() {
+            /*
+            window.addEventListener('resize', ()=>{
+                if (window.innerWidth <= 425){
+                    this.setState({ layout: 'mobile' });
+                } else if((window.innerWidth <= 1024)&&(window.innerWidth > 425)) {
+                    this.setState({ layout: 'laptop' });
+                } else {
+                    this.setState({ layout: 'desktop' });
+                }
+            });
+            */
             this.fetch()
                 .then(() => {
                     this.setState({ loading: false });
@@ -38,10 +50,13 @@ export const CellList = connect(stateToProps)(
                 });
         }
 
-        handleClick = (el) => this.setState({
-            showModal:!this.state.showModal,
-            showImage:el
-        });
+        handleClick = (el) => {
+            console.log(el);
+            this.setState({
+                showModal:!this.state.showModal,
+                showImage:el
+            });
+        }
 
         handleClickNext = () => {
             let inc = this.state.showImage;
@@ -66,7 +81,7 @@ export const CellList = connect(stateToProps)(
 
         render(){
             const { items } = this.props;
-            /*const modal =
+            const modal =
                 this.state.showModal &&
                 <Modal items={this.props.items}
                        showImage={this.state.showImage}
@@ -74,23 +89,21 @@ export const CellList = connect(stateToProps)(
                        clickNext={this.handleClickNext.bind(this)}
                        clickPrev={this.handleClickPrev.bind(this)}
                 />;
-                */
             const imageElements = items.map(el => {
+                const ratio = el.images.downsized.width/el.images.downsized.height*200;
+                const l = ratio / document.documentElement.clientWidth * 100;
                 return(
-                    <div
-                        key={el.id}
-                         className="Wrapper-Cell">
-                        <Cell props={el} /*onImageClick={
+                        <Cell key={el.id}
+                              props={el} onImageClick={
                             this.handleClick.bind(this,
-                                this.props.items.indexOf(el))}*//>
-                    </div>
+                                this.props.items.indexOf(el))} />
                     )});
             return (
-                <div className="Wrapper" id="Wrapper">
-                    <Infinite fetchNext={this.fetch}>
-                        {imageElements}
-                    </Infinite>
-                </div>
+                <Infinite fetchNext={this.fetch}>
+                    {imageElements}
+                    {modal}
+                </Infinite>
+
             )
         }
     }

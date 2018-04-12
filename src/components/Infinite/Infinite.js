@@ -29,11 +29,7 @@ export class Infinite extends React.Component {
         const scroll = document.documentElement.scrollTop;
         const containerHeight = this.container.clientHeight;
         let visiblePat = window.innerHeight;
-        console.log(scroll);
-        console.log(containerHeight);
-        console.log(visiblePat);
-        console.log(scroll + visiblePat >= containerHeight);
-        if (scroll + visiblePat > containerHeight) {
+        if (scroll + visiblePat >= containerHeight) {
             this.nextPage();
         }
     }

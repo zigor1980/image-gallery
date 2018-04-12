@@ -4,6 +4,7 @@ export default function fetchImages() {
             let offset = getState().images.offset;
             let response = await fetch(`http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=07tdqxOlkiUUHsHsIhyupUWo3nsUqmE1&offset=${offset}`);
             let json = await response.json();
+            console.log(json);
             const { data, pagination } = json;
             let { total_count } = pagination;
             offset += 25;
