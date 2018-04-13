@@ -40,8 +40,7 @@
         height: auto;
     }
     .Wrapper-Cell img{
-        width: auto;
-        max-height: none;
+        width: 100%;
     }
 }
 
@@ -58,12 +57,16 @@
 @media screen and (max-height: 415px) and (orientation: landscape){
     .Wrapper-Cell{
         display: inline-block;
+        height: 100vh;
         line-height: 100vh;
+    }
+    .Wrapper-Cell img{
+        height: 100%;
     }
 }
 
 .Wrapper-Cell img{
-    height: 100%;
+    display: inline-block;
     background: #cccccc;
     max-width: 100%;
     max-height: 100%;

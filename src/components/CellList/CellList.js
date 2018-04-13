@@ -100,7 +100,9 @@ export const CellList = connect(stateToProps)(
                     )});
             return (
                 <Infinite fetchNext={this.fetch}>
-                    {imageElements}
+                    <div className="Wrapper" id="Wrapper">
+                        {imageElements}
+                    </div>
                     {modal}
                 </Infinite>
 

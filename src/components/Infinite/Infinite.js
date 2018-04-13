@@ -26,10 +26,10 @@ export class Infinite extends React.Component {
         if (!this.container || this.state.loading) {
             return;
         }
-        const scroll = document.documentElement.scrollTop;
-        const containerHeight = this.container.clientHeight;
+        let scroll = document.documentElement.scrollTop;
+        const containerSize = this.container.clientHeight;
         let visiblePat = window.innerHeight;
-        if (scroll + visiblePat >= containerHeight) {
+        if ((scroll + visiblePat >= containerSize) && (window.innerHeight > 412)) {
             this.nextPage();
         }
     }
@@ -47,7 +47,7 @@ export class Infinite extends React.Component {
 
     render() {
         return (
-            <div className="Wrapper" ref={(container) => { this.container = container; }}>
+            <div id="Container" ref={(container) => { this.container = container; }}>
                 {this.props.children}
                 {this.state.loading && (
                     <div className="spinner">
