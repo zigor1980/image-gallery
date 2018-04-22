@@ -14,13 +14,13 @@ function Cell (data){
             className="Wrapper-Cell"
             style={{height: heigth, width:width}}
         >
-            <img
-                src={`${props.images.original.url}`}
-                alt=""
-                onClick={onImageClick}
-            />
+        <img
+            src={`${props.images.original.url}`}
+            alt=""
+            onClick={onImageClick}
+        />
         </div>
-    )
+    );
 }
 
 export default Cell;

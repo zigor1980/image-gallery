@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CellList } from './components/CellList/CellList'
+import { CellList } from './components/CellList/CellList';
 import './App.css';
 
 const stateToProps = state => ({
@@ -8,11 +8,11 @@ const stateToProps = state => ({
 });
 
 class App extends Component {
-  render() {
-    return (
-        <CellList />
-    );
-  }
+    render() {
+        return (
+            <CellList />
+        );
+    }
 }
 
 export default connect(stateToProps)(App);

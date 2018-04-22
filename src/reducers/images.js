@@ -7,15 +7,15 @@ export default function rooms(state, action) {
         };
     }
     switch (action.type) {
-        case 'IMAGES_FETCH':
-            console.log(state.offset);
-            return {
-                ...state,
-                items: [...state.items, ...action.data],
-                offset: action.offset,
-                end: action.end,
-            };
-        default:
-            return state;
+    case 'IMAGES_FETCH':
+        console.log(state.offset);
+        return {
+            ...state,
+            items: [...state.items, ...action.data],
+            offset: action.offset,
+            end: action.end,
+        };
+    default:
+        return state;
     }
 }

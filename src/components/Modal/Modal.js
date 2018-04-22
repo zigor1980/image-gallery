@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './Modal.css'
+import './Modal.css';
 
 class Modal extends Component{
 
@@ -8,23 +8,23 @@ class Modal extends Component{
         const {items,showImage,clickPrev, clickNext} = this.props;
         return (
             <div className="Modal">
-                <div style={{alignSelf:`center`}}>
+                <div style={{alignSelf:'center'}}>
                     <button
                         className="Modal_Button Modal_Button__Prev"
                         onClick={clickPrev}
-                    >{``}</button>
+                    >{''}</button>
                 </div>
 
-                    <div className="Modal_Content">
-                        <button className="Modal_Button Modal_Button__Close"
+                <div className="Modal_Content">
+                    <button className="Modal_Button Modal_Button__Close"
 
-                            onClick={this.props.onClose}>
-                            {'Close'}
-                        </button>
-                            <img src={`${items[showImage].images.original.url}`} alt=""/>
-                    </div>
-                <div style={{alignSelf:`center`}}>
-                    <button className="Modal_Button Modal_Button__Next" onClick={clickNext}>{``}</button>
+                        onClick={this.props.onClose}>
+                        {'Close'}
+                    </button>
+                    <img src={`${items[showImage].images.original.url}`} alt=""/>
+                </div>
+                <div style={{alignSelf:'center'}}>
+                    <button className="Modal_Button Modal_Button__Next" onClick={clickNext}>{''}</button>
                 </div>
             </div>
         );
