@@ -4,6 +4,9 @@ module.exports = {
 
     browsers: {
         chrome: {
+            screenshotMode: 'viewport',
+            screenshotDelay: 2000,
+            compositeImage: true,
             desiredCapabilities: {
                 browserName: 'chrome'
             }
