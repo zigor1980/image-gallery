@@ -1,5 +1,5 @@
 {
-  "name": "gal-2",
+  "name": "image-gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,11 +12,21 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "jest": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "test": "cross-env NODE_ENV=test  mocha --compilers js:babel-core/register src/spec.js",
+    "test:watch": "npm test -- -w"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
+    "babel-preset-react-app": "^3.1.1",
+    "chai-enzyme": "^0.8.0",
+    "cross-env": "^5.1.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-flowtype": "^2.46.3",
@@ -25,6 +35,12 @@
     "eslint-plugin-react": "^7.7.0",
     "gemini": "^5.6.2",
     "gemini-gui": "^6.0.1",
+    "mocha": "^5.1.1",
     "selenium-standalone": "^6.14.0"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   }
 }
