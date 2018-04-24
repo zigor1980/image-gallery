@@ -16,13 +16,14 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "test": "cross-env NODE_ENV=test  mocha --compilers js:babel-core/register src/spec.js",
+    "test": "cross-env NODE_ENV=test  mocha --compilers js:babel-core/register src/**/*.spec.js",
     "test:watch": "npm test -- -w"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-preset-react-app": "^3.1.1",
+    "chai": "^4.1.2",
     "chai-enzyme": "^0.8.0",
     "cross-env": "^5.1.4",
     "enzyme": "^3.3.0",
