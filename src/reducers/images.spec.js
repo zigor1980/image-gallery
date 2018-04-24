@@ -1,7 +1,5 @@
 import { expect } from 'chai';
 import images from './images';
-import * as ActionType from '../actions/fetchImages';
-
 
 describe('Reducer::images', () => {
     it('returns items (empty array), offset (0), end(false) if state is undefined', () => {

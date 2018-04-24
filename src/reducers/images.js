@@ -1,4 +1,4 @@
-export default function rooms(state, action) {
+export default function images(state, action) {
     if (!state) {
         return {
             items: [],
