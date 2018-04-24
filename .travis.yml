@@ -11,5 +11,6 @@ script:
   - npm run build
 deploy:
   provider: heroku
+  app: image-gallery-shri
   api_key: 
     secure: "e92dba93-f6a1-4aca-8f09-f1e0db331c56"
