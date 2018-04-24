@@ -9,3 +9,7 @@ script:
   - npm run lint
   - npm test
   - npm run build
+deploy:
+  provider: heroku
+  api_key: e92dba93-f6a1-4aca-8f09-f1e0db331c56
+  app: image-gallery
